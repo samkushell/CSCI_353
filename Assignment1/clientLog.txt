@@ -1,0 +1,4 @@
+connecting to the server localhost at port 3333
+sending register message Bobby
+recieved welcome
+terminating client...
