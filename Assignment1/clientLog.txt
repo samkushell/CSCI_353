@@ -1,3 +1,0 @@
-connecting to the server localhost at port 3333
-sending register message Bobbe
-recieved welcome

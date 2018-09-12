@@ -1,3 +1,0 @@
-server started on localhost at port 3333...
-client connection from host 127.0.0.1 port 63645
-recieved register Bobbe from host 127.0.0.1 port 63645

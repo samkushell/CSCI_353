@@ -4,8 +4,6 @@ import threading
 import thread
 import sys
 
-## TODO: can't quit, hung up on recvfrom?
-
 class MessageListenerThread (threading.Thread):
 	def stopListening(self):
 		self.shouldRun = False
@@ -23,7 +21,7 @@ class MessageListenerThread (threading.Thread):
 			try:
 				data, server_detail = self.socket.recvfrom(self.bufferLength)
 				if (data):
-				 	print (self.name + "# " + data)
+				 	print (data + "\n" + self.name + "# ")
 				 	self.log.write(data + "\n")
 			except:
 				self.shouldRun = False
@@ -66,10 +64,10 @@ try:
 			if (user_input == "exit"):
 				shouldConnect = False;
 			elif(user_input):
-				clientSocket.sendTo(user_input, server_address)
-				log.write(user_input)
+				clientSocket.sendto(user_input, server_address)
+				logfile.write(user_input + "\n")
 except:
-	print "Something went wrong while connecting to server"
+	print "something went wrong..."
 finally:
 	logfile.write("terminating client...\n")
 	logfile.close()
